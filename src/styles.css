@@ -11,13 +11,17 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "kanit", sans-serif;
   color: #444444;
 }
 
 a {
   color: #1977cc;
   text-decoration: none;
+  font-family: "kanit", sans-serif;
+}
+p{
+  font-family: "Kanit", sans-serif;
 }
 
 a:hover {
@@ -31,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "kanit", sans-serif;
 }
 
 /*--------------------------------------------------------------
