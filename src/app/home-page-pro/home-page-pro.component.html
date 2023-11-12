@@ -87,7 +87,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span>เข้าสู่ระบบ</a>
+      <a href="app-admin-page-uat" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span>เข้าสู่ระบบ</a>
 
     </div>
   </header><!-- End Header -->
@@ -468,7 +468,7 @@
           <h3>คุณมีระดับความเสี่ยงโรคไข้หวัดใหญ่สายพันธุ์ใหม่อยู่ในระดับ</h3>
           <div class="col-5 mx-auto rounded-4">
             <h3 style="border-radius: 10px; background: bisque; padding: 40px; width: auto;">
-              <span *ngIf="responseValue == 1; else equal">{{responseValue}}</span>
+              <span *ngIf="responseValue == 'N184'; else equal">{{responseValue}}</span>
               <ng-template #equal>{{responseValue}}</ng-template>
             </h3>
           </div>
