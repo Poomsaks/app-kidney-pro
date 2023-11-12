@@ -42,7 +42,7 @@ li a {
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "kanit", sans-serif;
   color: #444444;
 }
 
@@ -62,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "kanit", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -214,7 +214,7 @@ h6 {
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.5px;
-  font-family: "Poppins", sans-serif;
+  font-family: "kanit", sans-serif;
 }
 
 #header .logo a {
@@ -520,7 +520,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
+  font-family: "kanit", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;
@@ -945,7 +945,7 @@ section {
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "kanit", sans-serif;
   font-size: 14px;
 }
 
@@ -1313,7 +1313,7 @@ section {
 .faq .faq-list a {
   display: block;
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: "kanit", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;

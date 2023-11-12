@@ -19,8 +19,8 @@
       <main class="form-signin w-50 m-auto py-5">
         <form>
           <div class="row">
-            <img src="assets/logo_01.png" alt="ภาพ" style="height: 250px;width: 250px;" class="mx-auto d-block" />
-          </div>
+            <img src="assets/logo_01.png" alt="ภาพ" style="height: 30%;width: 30%;" class="mx-auto d-block" />
+          </div><BR>
 
           <div class="form-floating">
             <input [(ngModel)]="username" [ngModelOptions]="{ standalone: true }" type="email" class="form-control"
@@ -31,7 +31,7 @@
             <input [(ngModel)]="password" [ngModelOptions]="{ standalone: true }" type="password" class="form-control"
               id="password" placeholder="name@example.com">
             <label for="username">รหัสผ่าน</label>
-          </div>
+          </div><BR>
 
           <button style="margin-bottom: 5px;margin-top: 5px;" class="btn appointment-btn w-100 py-2" type="submit" (click)="login()">เข้าสู่ระบบ</button>
           <button class="btn appointment-btn w-100 py-2" type="submit" (click)="main()">กลับหน้าหลัก</button>

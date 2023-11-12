@@ -3,6 +3,7 @@ import { MainServiceProService } from '../main-service/main-service-pro.service'
 import { HttpClient } from '@angular/common/http';
 import Chart from 'chart.js/auto';
 
+
 @Component({
   selector: 'app-admin-page-uat',
   templateUrl: './admin-page-uat.component.html',
@@ -69,7 +70,7 @@ export class AdminPageUatComponent implements OnInit {
           {
             label: 'Count of Votes',
             data: [this.count1, this.count2, this.count3, this.count4, this.count5],
-            backgroundColor: ['rgba(234, 250, 241)', 'rgba(252, 243, 207)', 'rgba(250, 215, 160)','rgba(240, 178, 122)','rgba(220, 118, 51)']
+            backgroundColor: ['rgba(26, 188, 156)', 'rgba(255, 195, 0)', 'rgba(52, 152, 219)','rgba(88, 214, 141)','rgba(255, 87, 51)']
           }
         ]
       };
