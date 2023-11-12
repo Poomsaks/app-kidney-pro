@@ -1,0 +1,14 @@
+{
+  "/api": {
+    "target": "http://45.136.238.105:8069",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/web": {
+    "target": "http://45.136.238.105:8069",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
