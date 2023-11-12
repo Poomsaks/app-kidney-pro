@@ -52,9 +52,9 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <!-- <h1 class="logo me-auto"><a href="index.html">Kidney Risk</a></h1> -->
+      <h1 class="logo me-auto"><a href="index.html">Kidney Risk</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html" class="logo me-auto"><img src="assets/logo_Risk.png" alt="" class="img-fluid"></a>
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -461,28 +461,39 @@
           <div class="text-center"><button type="submit" (click)="onSubmit('2')"
               *ngIf="!showContent">ประเมินความเสี่ยง</button></div>
         </form>
-      </div><br>
+      </div>
       <div class="container py-4" *ngIf="showContent">
         <div class="row text-center">
-          <h2>ผลประเมินความเสี่ยงต่อการเป็นโรคไข้หวัดใหญ่สายพันธุ์ใหม่</h2>
+          <h1>ผลประเมินความเสี่ยงต่อการเป็นโรคไข้หวัดใหญ่สายพันธุ์ใหม่</h1>
           <h3>คุณมีระดับความเสี่ยงโรคไข้หวัดใหญ่สายพันธุ์ใหม่อยู่ในระดับ</h3>
           <div class="col-5 mx-auto rounded-4">
             <h3 style="border-radius: 10px; background: bisque; padding: 40px; width: auto;">
-              <span *ngIf="responseValue == 'โรคไตเรื้อรังระยะที่ 1'; else equal">{{responseValue}}</span>
-              <ng-template #equal>{{responseValue}}</ng-template>
+              <ng-container [ngSwitch]="responseValue">
+                <span *ngSwitchCase="'N181'">ท่านมีความเสี่ยงเป็นโรคไต ระยะที่ 1</span>
+                <span *ngSwitchCase="'N182'">ท่านมีความเสี่ยงเป็นโรคไต ระยะที่ 2</span>
+                <span *ngSwitchCase="'N183'">ท่านมีความเสี่ยงเป็นโรคไต ระยะที่ 3</span>
+                <span *ngSwitchCase="'N184'">ท่านมีความเสี่ยงเป็นโรคไต ระยะที่ 4</span>
+                <span *ngSwitchCase="'N185'">ท่านมีความเสี่ยงเป็นโรคไต ระยะที่ 5</span>
+                <ng-container *ngSwitchDefault>{{ responseValue }}</ng-container>
+              </ng-container>
             </h3>
           </div>
-          <div class="row">
 
+          <div class="row">
             <div class="col-5 mx-auto" style="text-align: start; color: red;">
-              <ng-container *ngIf="responseValue_2 == 1; else otherContent">
-                <p>ข้อแนะนำ: ควรมาพบแพทย์ทันที</p>
+              <ng-container [ngSwitch]="responseValue_2">
+                <p *ngSwitchCase="'N181'">ข้อแนะนำ: ท่านมีความเสี่ยง น้อย ต่อการเกิดโรคไตในระยะเวลา 10 ปี (น้อยกว่า 5%) ข้อแนะนำเบื้องต้น เพื่อป้องกันการเกิดโรคไตในอนาคต ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม</p>
+                <p *ngSwitchCase="'N182'">ข้อแนะนำ: ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม รักษาระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ ควบคุมระดับความดันโลหิตให้ดี</p>
+                <p *ngSwitchCase="'N183'">ข้อแนะนำ: ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม ควรหลีกเลี่ยงยากินแก้ปวดข้อ ปวดกล้ามเนื้อ (NSAIDs) รักษาระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ ควบคุมระดับความดันโลหิตให้ดี ลดน้ำหนักให้อยู่ในเกณฑ์ปกติ และท่านควรตรวจการทำงานของไตเพื่อให้มั่นใจว่าไตของท่านยังไม่มีปัญหาในปัจจุบัน</p>
+                <p *ngSwitchCase="'N184'">ข้อแนะนำ: ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม ควรหลีกเลี่ยงยากินแก้ปวดข้อ ปวดกล้ามเนื้อ (NSAIDs) รักษาระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ ควบคุมระดับความดันโลหิตให้ดี ลดน้ำหนักให้อยู่ในเกณฑ์ปกติ และท่านควรตรวจการทำงานของไตเพื่อให้มั่นใจว่าไตของท่านยังไม่มีปัญหาในปัจจุบัน ปฏิบัติตามแพทย์อย่างเคร่งครัด</p>
+                <p *ngSwitchCase="'N185'">ข้อแนะนำ: ท่านมีค่าการทำงานของไต 15 มล./นาที ท่านจึงต้องติดต่อแพทย์เพื่อฟอกไต</p>
+                <ng-container *ngSwitchDefault>
+                  <p>ข้อแนะนำ: ......</p>
+                </ng-container>
               </ng-container>
-              <ng-template #otherContent>
-                <p>ข้อแนะนำ: ท่านมีความเสี่ยง น้อย ต่อการเกิดโรคไตในระยะเวลา 10 ปี (น้อยกว่า 5%) ข้อแนะนำเบื้องต้น เพื่อป้องกันการเกิดโรคไตในอนาคต ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม</p>
-              </ng-template>
             </div>
           </div>
+
 
           <div class="col-5 mx-auto mb-4 py-3">
             <a (click)="goToReport()" target="_blank">
@@ -504,7 +515,7 @@
 
         <div class="section-title">
           <h2>รูปภาพ</h2>
-          <p></p>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
       </div>
 
@@ -586,11 +597,7 @@
 
         <div class="section-title">
           <h2>ติดต่อเรา</h2>
-          <p>สามารถติดต่อโรงพยาบาลได้ที่อยู่ 145 ม.7 ถ.บริบาลดำริ ต.ศรีสุทโธ อ.บ้านดุง จ.อุดรธานี 41190</p><br>
-          <p>Contact Info
-            โทร. 042273700-3
-            แฟกซ์ 042273704
-            อีเมล์ bcph11446@gmail.com</p>
+          <p>สามารถติดต่อโรงพยาบาลได้ที่อยู่ 145 ม.7 ถ.บริบาลดำริ ต.ศรีสุทโธ อ.บ้านดุง จ.อุดรธานี 41190</p>
         </div>
       </div>
 
@@ -600,36 +607,141 @@
           frameborder="0" allowfullscreen></iframe>
       </div>
 
- 
+      <div class="container">
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@example.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 55s</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
- 
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Medilab</h3>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
     <div class="container d-md-flex py-4">
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong>โรงพยาบาลสมเด็จพระยุพราชบ้านดุง<span></span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-          Designed by <a href="#">นักวิชาการคอมพิวเตอร์</a>
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
-    
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href=""><i class="bi bi-twitter"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""> <i class="bi bi-linkedin"></i> </a>
+      </div>
     </div>
-     
-    <a style="display:scroll;position:fixed;bottom:5px;right:5px;" class="backtotop" href="#" rel="nofollow" ><img style="height: 50px;" src="assets/gallery/upper-29.png"/></a>
-    
   </footer><!-- End Footer -->
-  
 </body>
 
 </html>
