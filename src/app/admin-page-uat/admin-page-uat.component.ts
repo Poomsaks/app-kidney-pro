@@ -89,7 +89,7 @@ export class AdminPageUatComponent implements OnInit {
   }
   ngOnInit() {
     this._serviceService.get_profile().subscribe((response: any) => {
-      // console.log(response.result.response);
+      console.log(response.result);
       this.jsonData = response.result.response;
     });
   }

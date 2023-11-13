@@ -42,7 +42,9 @@
                   <div class="col-lg-2 col-md-6 mt-5 mt-lg-0">
                     <div class="count-box shadow">
                       <i class="far fa-hospital"></i>
-                      <div><h3>{{total}}</h3></div>
+                      <div>
+                        <h3>{{total}}</h3>
+                      </div>
                       <p>ทั้งหมด</p>
                     </div>
                   </div>
@@ -51,7 +53,9 @@
                   <div class="col-lg-2 col-md-6 mt-5 mt-md-0">
                     <div class="count-box shadow">
                       <i class="bi bi-clipboard2-pulse"></i>
-                      <div><h3>{{count1}}</h3></div>
+                      <div>
+                        <h3>{{count1}}</h3>
+                      </div>
                       <p>ระยะที่ 1</p>
                     </div>
                   </div>
@@ -59,7 +63,9 @@
                   <div class="col-lg-2 col-md-6 mt-5 mt-md-0">
                     <div class="count-box shadow">
                       <i class="bi bi-journal-medical"></i>
-                      <div><h3>{{count2}}</h3></div>
+                      <div>
+                        <h3>{{count2}}</h3>
+                      </div>
                       <p>ระยะที่ 2</p>
                     </div>
                   </div>
@@ -67,7 +73,9 @@
                   <div class="col-lg-2 col-md-6 mt-5 mt-lg-0">
                     <div class="count-box shadow">
                       <i class="bi bi-capsule-pill"></i>
-                      <div><h3>{{count3}}</h3></div>
+                      <div>
+                        <h3>{{count3}}</h3>
+                      </div>
                       <p>ระยะที่ 3</p>
                     </div>
                   </div>
@@ -75,7 +83,9 @@
                   <div class="col-lg-2 col-md-6 mt-5 mt-lg-0">
                     <div class="count-box shadow">
                       <i class="bi bi-lungs"></i>
-                      <div><h3>{{count4}}</h3></div>
+                      <div>
+                        <h3>{{count4}}</h3>
+                      </div>
                       <p>ระยะที่ 4</p>
                     </div>
                   </div>
@@ -83,7 +93,9 @@
                   <div class="col-lg-2 col-md-6 mt-5 mt-lg-0">
                     <div class="count-box shadow">
                       <i class="bi bi-heart-pulse"></i>
-                      <div><h3>{{count5}}</h3></div>
+                      <div>
+                        <h3>{{count5}}</h3>
+                      </div>
                       <p>ระยะที่ 5</p>
                     </div>
                   </div>
@@ -142,10 +154,11 @@
                       <td>{{ item.name }}</td>
                       <td>{{ item.email }}</td>
                       <td>{{ item.phone }}</td>
-                      <td *ngIf="item.class_per === '[1]'; else notZero">ไข้หวัดใหญ่สายพันธุ์ใหม่</td>
-                      <ng-template #notZero>
-                        <td>ไข้หวัดใหญ่ธรรมดา</td>
-                      </ng-template>
+                      <td *ngIf="item.pdx.toString() === '[\'N181\']';">ผู้ป่วยโรคไต ระยะที่ 1</td>
+                      <td *ngIf="item.pdx.toString() === '[\'N182\']';">ผู้ป่วยโรคไต ระยะที่ 2</td>
+                      <td *ngIf="item.pdx.toString() === '[\'N183\']';">ผู้ป่วยโรคไต ระยะที่ 3</td>
+                      <td *ngIf="item.pdx.toString() === '[\'N184\']';">ผู้ป่วยโรคไต ระยะที่ 4</td>
+                      <td *ngIf="item.pdx.toString() === '[\'N185\']';">ผู้ป่วยโรคไต ระยะที่ 5</td>
                     </tr>
                   </tbody>
                 </table>
