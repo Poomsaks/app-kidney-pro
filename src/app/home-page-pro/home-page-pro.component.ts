@@ -56,8 +56,10 @@ export class HomePageProComponent {
       window.addEventListener('scroll', headerScrolled);
     }
   }
-
-
+  selectedMenu: string = 'home';
+  setActive(menu: string) {
+    this.selectedMenu = menu; // Set the selected menu
+  }
   //เริ่มต้น การ วินิจฉัย
   FullName: string = ""//ชื่อ
   email: string = ""//อีเมล

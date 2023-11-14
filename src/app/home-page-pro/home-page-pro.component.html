@@ -40,10 +40,6 @@
         <i class="bi bi-phone"></i> 042-274098
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
-        <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
-        <!-- <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> -->
-        <!-- <a href="#" class="instagram"><i class="bi bi-instagram"></i></a> -->
-        <!-- <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
       </div>
     </div>
   </div>
@@ -51,43 +47,26 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-
-      <!-- <h1 class="logo me-auto"><a href="index.html">Kidney Risk</a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
       <a href="index.html" class="logo me-auto"><img src="assets/logo_Risk.png" alt="" class="img-fluid"></a>
-
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">หน้าหลัก</a></li>
-          <li><a class="nav-link scrollto" href="#about">เกี่ยวกับ</a></li>
-          <li><a class="nav-link scrollto" href="#services">บริการของเรา</a></li>
-          <li><a class="nav-link scrollto" href="#appointment">แผนกโรคไตเรื้อรัง</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li> -->
+          <li><a class="nav-link scrollto" [ngClass]="{'active': selectedMenu === 'home'}" (click)="setActive('home')"
+              href="#hero">หน้าหลัก</a></li>
+          <li><a class="nav-link scrollto" [ngClass]="{'active': selectedMenu === 'about'}" (click)="setActive('about')"
+              href="#about">เกี่ยวกับ</a></li>
+          <li><a class="nav-link scrollto" [ngClass]="{'active': selectedMenu === 'services'}"
+              (click)="setActive('services')" href="#services">บริการของเรา</a></li>
+          <li><a class="nav-link scrollto" [ngClass]="{'active': selectedMenu === 'appointment'}"
+              (click)="setActive('appointment')" href="#appointment">แผนกโรคไตเรื้อรัง</a></li>
+          <li><a class="nav-link scrollto" [ngClass]="{'active': selectedMenu === 'contact'}"
+              (click)="setActive('contact')" href="#contact">ติดต่อเรา</a></li>
 
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
-
-          <li><a class="nav-link scrollto" href="#contact">ติดต่อเรา</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="app-admin-page-uat" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span>เข้าสู่ระบบ</a>
+      <a href="app-admin-page-uat" class="appointment-btn scrollto"><span
+          class="d-none d-md-inline"></span>เข้าสู่ระบบ</a>
 
     </div>
   </header><!-- End Header -->
@@ -110,8 +89,10 @@
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
               <h3>การตรวจพบโรคไตสำคัญอย่างไร ?</h3>
-              <p style="text-align: justify;">เพราะโรคไตอาจมีอาการแย่ลงได้ทีละน้อยโดยไม่รู้ตัว หลายคนไม่ทราบด้วยซ้ำว่าตนเป็นโรคไตอยู่จนกว่าจะมีอาการแย่แล้ว
-                ดังนั้น การตรวจพบและได้รับการรักษาแต่เนิ่นๆอาจทำให้โรคไตเรื้อรังคงตัวและหายได้หากปล่อยไว้จนมีอาการแย่ลงจะนำไปสู่ภาวะไตวายซึ่งไตจะไม่สามารถทำงานได้ตามปกติอีกต่อไปจำเป็นต้องได้รับการรักษาเช่นฟอกเลือดหรือเปลี่ยนไต
+              <p style="text-align: justify;">เพราะโรคไตอาจมีอาการแย่ลงได้ทีละน้อยโดยไม่รู้ตัว
+                หลายคนไม่ทราบด้วยซ้ำว่าตนเป็นโรคไตอยู่จนกว่าจะมีอาการแย่แล้ว
+                ดังนั้น
+                การตรวจพบและได้รับการรักษาแต่เนิ่นๆอาจทำให้โรคไตเรื้อรังคงตัวและหายได้หากปล่อยไว้จนมีอาการแย่ลงจะนำไปสู่ภาวะไตวายซึ่งไตจะไม่สามารถทำงานได้ตามปกติอีกต่อไปจำเป็นต้องได้รับการรักษาเช่นฟอกเลือดหรือเปลี่ยนไต
               </p>
               <div class="text-center">
                 <a href="#" class="more-btn">เรียนรู้เพิ่มเติม<i class="bx bx-chevron-right"></i></a>
@@ -126,12 +107,12 @@
                     <i class="bi bi-receipt"></i>
                     <h4>ปัจจัยเสี่ยงของโรคไตเรื้อรัง</h4>
                     <div style="text-align: left;">
-                    <p>-โรคเบาหวาน<br>
-                      -ความดันโลหิตสูง<br>
-                      -ประวัติคนในครอบครัวเป็นโรคไตเรื้อรัง<br>
-                      -อายุมาก<br>
-                      -น้ำหนักเกินหรืออ้วน<br>
-                      -สูบบุหรี่</p>
+                      <p>-โรคเบาหวาน<br>
+                        -ความดันโลหิตสูง<br>
+                        -ประวัติคนในครอบครัวเป็นโรคไตเรื้อรัง<br>
+                        -อายุมาก<br>
+                        -น้ำหนักเกินหรืออ้วน<br>
+                        -สูบบุหรี่</p>
                     </div>
                   </div>
                 </div>
@@ -139,7 +120,8 @@
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bi bi-box"></i>
                     <h4>เมื่อมีความเสี่ยงของโรคไตเรื้อรัง</h4>
-                    <p style="text-align: left;">- วัดความดันโลหิต <br> - ตรวจหาโปรตีนในปัสสาวะ <br>- ตรวจเลือดตามปกติเพื่อหาค่าครีเอตินิน</p>
+                    <p style="text-align: left;">- วัดความดันโลหิต <br> - ตรวจหาโปรตีนในปัสสาวะ <br>-
+                      ตรวจเลือดตามปกติเพื่อหาค่าครีเอตินิน</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
@@ -147,13 +129,13 @@
                     <i class="bi bi-images"></i>
                     <h4>อาการของโรคไตเรื้อรัง</h4>
                     <p style="text-align: left;">-อ่อนแรง<br>
-                       -คิดอะไรไม่ค่อยออก<br>
-                       -เบื่ออาหาร นอนไม่หลับ<br>
-                       -ผิวแห้ง คัน<br>
-                       -กล้ามเนื้อเป็นตะคริวตอนกลางคืน<br>
-                       -เท้าและข้อเท้าบวม<br>
-                       -ตาบวมน้ำ โดยเฉพาะในตอนเช้า<br>
-                       -ปัสสาวะบ่อย โดยเฉพาะตอนกลางคืน</p>
+                      -คิดอะไรไม่ค่อยออก<br>
+                      -เบื่ออาหาร นอนไม่หลับ<br>
+                      -ผิวแห้ง คัน<br>
+                      -กล้ามเนื้อเป็นตะคริวตอนกลางคืน<br>
+                      -เท้าและข้อเท้าบวม<br>
+                      -ตาบวมน้ำ โดยเฉพาะในตอนเช้า<br>
+                      -ปัสสาวะบ่อย โดยเฉพาะตอนกลางคืน</p>
                   </div>
                 </div>
               </div>
@@ -172,25 +154,34 @@
             <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
           </div>
 
-          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+          <div
+            class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h3>การตรวจเมื่ออาจเป็นโรคไตเรื้อรัง</h3>
-            <p style="text-align: justify;">แพทย์จะทำการตรวจที่เฉพาะเจาะจงเพิ่มขึ้นเพื่อวางแผนการรักษา&nbsp;โดยจะตรวจดังต่อไปนี้คำนวณค่าการทำงานของไต&nbsp;ซึ่งเป็นวิธีที่ดีในการบ่งบอกว่าไตยังทำงานได้มากน้อยเพียงใด&nbsp;เพื่อให้แพทย์ทราบได้ถึงระยะของโรคไตและช่วยในการวางแผนการรักษา
+            <p style="text-align: justify;">
+              แพทย์จะทำการตรวจที่เฉพาะเจาะจงเพิ่มขึ้นเพื่อวางแผนการรักษา&nbsp;โดยจะตรวจดังต่อไปนี้คำนวณค่าการทำงานของไต&nbsp;ซึ่งเป็นวิธีที่ดีในการบ่งบอกว่าไตยังทำงานได้มากน้อยเพียงใด&nbsp;เพื่อให้แพทย์ทราบได้ถึงระยะของโรคไตและช่วยในการวางแผนการรักษา
               ทำการตรวจอัลตราซาวนด์หรือ&nbsp;CT&nbsp;scan&nbsp;เพื่อถ่ายภาพไตและทางเดินปัสสาวะ&nbsp;เพื่อพิจารณาขนาดของไต&nbsp;ตรวจหาก้อนนิ่วหรือเนื้องอก&nbsp;และดูว่ามีปัญหาอะไรเกี่ยวกับโครงสร้างของไตและทางเดินปัสสาวะหรือไม่
-              ตัดชิ้นเนื้อไตส่งตรวจ&nbsp;ซึ่งจะทำในบางกรณีเท่านั้นในการตรวจดูประเภทของโรคไตที่เฉพาะเจาะจง&nbsp;ดูว่าไตถูกทำลายไปมากน้อยเพียงใดและช่วยในการวางแผนการรักษา&nbsp;ในการตัดชิ้นเนื้อนั้น&nbsp;แพทย์จะนำเนื้อเยื่อเล็กๆ&nbsp;ของไตส่องด้วยกล้องจุลทรรศน์&nbsp;แพทย์วินิจฉัยโรคไตเรื้อรังอย่างไร </p>
+              ตัดชิ้นเนื้อไตส่งตรวจ&nbsp;ซึ่งจะทำในบางกรณีเท่านั้นในการตรวจดูประเภทของโรคไตที่เฉพาะเจาะจง&nbsp;ดูว่าไตถูกทำลายไปมากน้อยเพียงใดและช่วยในการวางแผนการรักษา&nbsp;ในการตัดชิ้นเนื้อนั้น&nbsp;แพทย์จะนำเนื้อเยื่อเล็กๆ&nbsp;ของไตส่องด้วยกล้องจุลทรรศน์&nbsp;แพทย์วินิจฉัยโรคไตเรื้อรังอย่างไร
+            </p>
             <div class="icon-box">
               <div class="icon"><i class="bi bi-fingerprint"></i></div>
               <h4 class="title"><a href="">การตรวจเลือด&nbsp;การตรวจปัสสาวะ</a></h4>
-              <p style="text-align: justify;" class="description">การเก็บตัวอย่างปัสสาวะเพื่อตรวจสอบค่าพื้นฐาน&nbsp;เช่น&nbsp;การตรวจสี,&nbsp;ความเข้มข้น,&nbsp;กลิ่น,&nbsp;และ&nbsp;pH.</p>
+              <p style="text-align: justify;" class="description">
+                การเก็บตัวอย่างปัสสาวะเพื่อตรวจสอบค่าพื้นฐาน&nbsp;เช่น&nbsp;การตรวจสี,&nbsp;ความเข้มข้น,&nbsp;กลิ่น,&nbsp;และ&nbsp;pH.
+              </p>
             </div>
             <div class="icon-box">
               <div class="icon"><i class="bi bi-card-image"></i></div>
               <h4 class="title"><a href="">การตรวจวินิฉัยด้วยภาพถ่าย</a></h4>
-              <p class="description">สภาวะทางการแพทย์&nbsp;ภาพถ่ายสามารถช่วยในการตรวจวินิจฉัยหรือวิเคราะห์สภาวะของร่างกายในลักษณะต่าง&nbsp;ๆ</p>
+              <p class="description">
+                สภาวะทางการแพทย์&nbsp;ภาพถ่ายสามารถช่วยในการตรวจวินิจฉัยหรือวิเคราะห์สภาวะของร่างกายในลักษณะต่าง&nbsp;ๆ
+              </p>
             </div>
             <div class="icon-box">
               <div class="icon"><i class="bi bi-box-seam"></i></div>
               <h4 class="title"><a href="">การตัดชิ้นเนื้อไตส่งตรวจ</a></h4>
-              <p class="description">แพทย์จะทำการผ่าตัดเพื่อเข้าถึงไตแล้วใช้เข็มเจาะส่วนของไตเพื่อเอาตัวอย่างเนื้อไต&nbsp;นำตัวอย่างนี้ไปตรวจซึ่งอาจเป็นการส่งเนื้อไตไปที่ห้องปฏิบัติการ</p>
+              <p class="description">
+                แพทย์จะทำการผ่าตัดเพื่อเข้าถึงไตแล้วใช้เข็มเจาะส่วนของไตเพื่อเอาตัวอย่างเนื้อไต&nbsp;นำตัวอย่างนี้ไปตรวจซึ่งอาจเป็นการส่งเนื้อไตไปที่ห้องปฏิบัติการ
+              </p>
             </div>
           </div>
         </div>
@@ -202,9 +193,11 @@
     <section id="services" class="services">
       <div class="container">
 
-        <div class="section-title">
+        <div class="section-title" style="margin-top: 50px;">
           <h2>โรคไตเรื้อรัง&nbsp;ไม่ยากเกินเข้าใจ</h2>
-          <p>ไต&nbsp;(Kidneys)&nbsp;เป็นอวัยวะที่มีรูปร่างคล้ายถั่ว&nbsp;อยู่บริเวณใต้ชายโครงด้านหลังทั้ง&nbsp;2&nbsp;ข้าง&nbsp;โดยไตแต่ละข้างจะมีหน่วยไต&nbsp;(nephron)&nbsp;ซึ่งทำหน้าที่กรองน้ำและของเสียออกจากร่างกาย</p>
+          <p>
+            ไต&nbsp;(Kidneys)&nbsp;เป็นอวัยวะที่มีรูปร่างคล้ายถั่ว&nbsp;อยู่บริเวณใต้ชายโครงด้านหลังทั้ง&nbsp;2&nbsp;ข้าง&nbsp;โดยไตแต่ละข้างจะมีหน่วยไต&nbsp;(nephron)&nbsp;ซึ่งทำหน้าที่กรองน้ำและของเสียออกจากร่างกาย
+          </p>
         </div>
 
         <div class="row">
@@ -212,7 +205,9 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-heartbeat"></i></div>
               <h4><a href="">รู้จักโรคไตเรื้อรัง</a></h4>
-              <p  style="text-align: justify;">โรคไตเรื้อรัง&nbsp;(Chronic&nbsp;kidney&nbsp;disease)&nbsp;คือภาวะที่ไตทำงานได้ลดลงโดยดูจากค่าอัตราการกรองของไตที่ผิดปกติหรือไตมีภาวะผิดปกติเช่นมีโปรตีนรั่วในปัสสาวะหรือมีความผิดปกติทางรังสีวิทยาเป็นต้นในระยะเวลามากกว่า 3 เดือนขึ้นไป</p>
+              <p style="text-align: justify;">
+                โรคไตเรื้อรัง&nbsp;(Chronic&nbsp;kidney&nbsp;disease)&nbsp;คือภาวะที่ไตทำงานได้ลดลงโดยดูจากค่าอัตราการกรองของไตที่ผิดปกติหรือไตมีภาวะผิดปกติเช่นมีโปรตีนรั่วในปัสสาวะหรือมีความผิดปกติทางรังสีวิทยาเป็นต้นในระยะเวลามากกว่า
+                3 เดือนขึ้นไป</p>
             </div>
           </div>
 
@@ -226,7 +221,9 @@
                 3. โรคไตอักเสบ&nbsp;เช่น&nbsp;IgA nephropathy, Lupus nephritis, FSGS เป็นต้น
                 4. โรคทางพันธุกรรม เช่น โรคถุงน้ำที่ไต (Polycystic kidney disease)
                 5. โรคไตขาดเลือดจากเส้นเลือดที่ไปเลี้ยงไตตีบ ซึ่งมักพบได้ในผู้ป่วยโรคหัวใจและหลอดเลือด
-                6. โรคนิ่วในทางเดินปัสสาวะ&nbsp;มีการอุดกั้นทางเดินปัสสาวะ&nbsp;หรือมีการติดเชื้อในระบบทางเดินปัสสาวะซ้ำหลายครั้ง&nbsp;7.&nbsp;การได้รับยาแก้ปวดกลุ่ม NSAIDs เป็นระยะเวลานาน เช่น ยา diclofenac</p>
+                6.
+                โรคนิ่วในทางเดินปัสสาวะ&nbsp;มีการอุดกั้นทางเดินปัสสาวะ&nbsp;หรือมีการติดเชื้อในระบบทางเดินปัสสาวะซ้ำหลายครั้ง&nbsp;7.&nbsp;การได้รับยาแก้ปวดกลุ่ม
+                NSAIDs เป็นระยะเวลานาน เช่น ยา diclofenac</p>
             </div>
           </div>
 
@@ -237,7 +234,8 @@
               <p style="text-align: justify;">
                 ผู้ที่มีความเสี่ยงโรคไตเรื้อรัง และควรเข้ารับการตรวจคัดกรองโรคไต
                 1. มีอายุมากกว่า 60 ปีขึ้นไป
-                2. มีโรคประจําตัวที่เป็นสาเหตุของโรคไตเรื้อรัง เช่น โรคเบาหวาน ความดันโลหิตสูง 3. ผู้ที่เป็นโรคที่อาจทําให้เกิดพยาธิสภาพที่ไต เช่น โรค SLE โรคหลอดเลือดหัวใจ
+                2. มีโรคประจําตัวที่เป็นสาเหตุของโรคไตเรื้อรัง เช่น โรคเบาหวาน ความดันโลหิตสูง 3.
+                ผู้ที่เป็นโรคที่อาจทําให้เกิดพยาธิสภาพที่ไต เช่น โรค SLE โรคหลอดเลือดหัวใจ
                 ผู้ที่เป็นโรค Gout หรือมีระดับยูริกในเลือดสูง
                 5. ได้รับสารพิษหรือยาที่ทําลายใต
                 6. มีประวัติโรคไตเรื้อรังในครอบครัว
@@ -250,21 +248,23 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-dna"></i></div>
               <h4><a href="">ระยะของโรคไตเรื้อรัง</a></h4>
-              <p style="text-align: justify;">โรคไตเรื้อรังแบ่งเป็น 5 ระยะ โดยแบ่งตามระดับของอัตราการกรองของไต (eGFR) ระยะของโรคไตเรื้อรัง eGFR (mL/min/1.73 m)
+              <p style="text-align: justify;">โรคไตเรื้อรังแบ่งเป็น 5 ระยะ โดยแบ่งตามระดับของอัตราการกรองของไต (eGFR)
+                ระยะของโรคไตเรื้อรัง eGFR (mL/min/1.73 m)
                 ระยะที่ 1 > 90
                 ระยะที่ 2 60 - 90
                 ระยะที่ 3 45 - 59
                 ระยะที่ 3 30 - 44
                 ระยะที่ 4 15 - 29
                 ระยะที่ 5 < 15<br>
-                <b>คํานิยาม</b>
-                มีภาวะไตผิดปกติ เช่น มีโปรตีนรั่วในปัสสาวะ แต่อัตราการกรองยังปกติ
-                มีภาวะไตผิดปกติ เช่น มีโปรตีนรั่วในปัสสาวะ อัตราการกรองลดลงเล็กน้อย
-                อัตราการกรองลดลงเล็กน้อยถึงปานกลาง
-                อัตราการกรองลดลงปานกลางถึงมาก
-                อัตราการกรองลดลงมาก
-                ไตวายระยะสุดท้าย
-                ค่า eGFR (estimated Glomerular Filtration Rate) คือปริมาณเลือดที่ไหลผ่านตัวกรองของไตในหนึ่งนาที (มล./นาที/1.73 ตร.ม.)</p>
+                  <b>คํานิยาม</b>
+                  มีภาวะไตผิดปกติ เช่น มีโปรตีนรั่วในปัสสาวะ แต่อัตราการกรองยังปกติ
+                  มีภาวะไตผิดปกติ เช่น มีโปรตีนรั่วในปัสสาวะ อัตราการกรองลดลงเล็กน้อย
+                  อัตราการกรองลดลงเล็กน้อยถึงปานกลาง
+                  อัตราการกรองลดลงปานกลางถึงมาก
+                  อัตราการกรองลดลงมาก
+                  ไตวายระยะสุดท้าย
+                  ค่า eGFR (estimated Glomerular Filtration Rate) คือปริมาณเลือดที่ไหลผ่านตัวกรองของไตในหนึ่งนาที
+                  (มล./นาที/1.73 ตร.ม.)</p>
             </div>
           </div>
 
@@ -274,10 +274,13 @@
               <h4><a href="">อาการของโรคไตเรื้อรัง</a></h4>
               <p style="text-align: justify;">
                 1. ปัสสาวะบ่อยตอนกลางคืน พบได้เมื่อการทํางานของไตเริ่มเสื่อมลงในระยะแรก
-                2. ขาบวมและกดปุ่ม เกิดจากมีเกลือและน้ําคั่งในร่างกาย หรือมีโปรตีนรั่วมาในปัสสาวะมากหากบวมมากจะทําให้เกิดอาการหอบเหนื่อยจากการมีน้ําคั่งในปอด ซึ่งอาจเป็น อันตรายต่อชีวิต
+                2. ขาบวมและกดปุ่ม เกิดจากมีเกลือและน้ําคั่งในร่างกาย
+                หรือมีโปรตีนรั่วมาในปัสสาวะมากหากบวมมากจะทําให้เกิดอาการหอบเหนื่อยจากการมีน้ําคั่งในปอด ซึ่งอาจเป็น
+                อันตรายต่อชีวิต
                 3. ความดันโลหิตสูง
                 4. คลื่นไส้อาเจียน เบื่ออาหาร ค้นตามร่างกาย อ่อนเพลีย
-                5. ในเพศหญิงอาจมีการขาดประจําเดือนหรือไม่สามารถตั้งครรภ์ได้ ส่วนเพศชายจะมีความรู้สึกทางเพศลดลงและการสร้างอสุจิลดลง</p>
+                5. ในเพศหญิงอาจมีการขาดประจําเดือนหรือไม่สามารถตั้งครรภ์ได้
+                ส่วนเพศชายจะมีความรู้สึกทางเพศลดลงและการสร้างอสุจิลดลง</p>
             </div>
           </div>
 
@@ -286,9 +289,15 @@
               <div class="icon"><i class="fas fa-notes-medical"></i></div>
               <h4><a href="">การรักษาโรคไตเรื้อรัง</a></h4>
               <p style="text-align: justify;">
-                การรักษาขึ้นอยู่กับสาเหตุของโรคไตเรื้อรัง ระยะของโรคที่เป็น และโรคร่วมที่มีอยู่ โดยการดูแลรักษา ประกอบด้วย
-                1. การรักษาเพื่อชะลอการเสื่อมของไต ควบคุมโรคประจําตัวให้ดี ได้แก่ คุมโรคเบาหวานและความดันโลหิตสูงให้ดี ยาลดความดันบางกลุ่มหรือยารักษาเบาหวานบางกลุ่มก็ช่วยชะลอความเสื่อมของไตได้ และหลีกเลี่ยงสารหรือยาที่มีผลเสียต่อไต
-                2. การรักษาด้วยวิธีบําบัดทดแทนไต คือกระบวนการรักษาผู้ป่วยโรคไตเรื้อรังระยะที่ 5 เพื่อทดแทนไตที่ไม่สามารถทํางานได้เองตามที่ควร จะเป็น ช่วยขจัดของเสียที่ค้างอยู่ในร่างกาย จะเริ่มมีบทบาทเมื่ออัตราการกรองของไต ร่วมกับมีภาวะแทรกซ้อนที่ไม่ตอบสนองต่อการรักษาด้วยยา หรือมีภาวะแทรกซ้อนที่อาจเป็นอันตรายรุนแรงต่อผู้ป่วย</p>
+                การรักษาขึ้นอยู่กับสาเหตุของโรคไตเรื้อรัง ระยะของโรคที่เป็น และโรคร่วมที่มีอยู่ โดยการดูแลรักษา
+                ประกอบด้วย
+                1. การรักษาเพื่อชะลอการเสื่อมของไต ควบคุมโรคประจําตัวให้ดี ได้แก่ คุมโรคเบาหวานและความดันโลหิตสูงให้ดี
+                ยาลดความดันบางกลุ่มหรือยารักษาเบาหวานบางกลุ่มก็ช่วยชะลอความเสื่อมของไตได้
+                และหลีกเลี่ยงสารหรือยาที่มีผลเสียต่อไต
+                2. การรักษาด้วยวิธีบําบัดทดแทนไต คือกระบวนการรักษาผู้ป่วยโรคไตเรื้อรังระยะที่ 5
+                เพื่อทดแทนไตที่ไม่สามารถทํางานได้เองตามที่ควร จะเป็น ช่วยขจัดของเสียที่ค้างอยู่ในร่างกาย
+                จะเริ่มมีบทบาทเมื่ออัตราการกรองของไต ร่วมกับมีภาวะแทรกซ้อนที่ไม่ตอบสนองต่อการรักษาด้วยยา
+                หรือมีภาวะแทรกซ้อนที่อาจเป็นอันตรายรุนแรงต่อผู้ป่วย</p>
             </div>
           </div>
 
@@ -301,9 +310,10 @@
     <section id="appointment" class="appointment section-bg">
       <div class="container">
 
-        <div class="section-title">
+        <div class="section-title" style="margin-top: 50px;">
           <h2>แบบประเมินความเสี่ยงโรคไตเรื้อรัง</h2>
-          <p>ระบบวินิจฉัยความเสี่ยงการโรคไตเรื้อรังเป็นระบบที่ใช้เทคโนโลยีทางปัญญาประดิษฐ์มาเชื่อมกับระบบฐานข้อมูล HosXP เพื่อวิเคราะห์ความเสี่ยงการเกิดโรคไตเรื้อรัง</p>
+          <p>ระบบวินิจฉัยความเสี่ยงการโรคไตเรื้อรังเป็นระบบที่ใช้เทคโนโลยีทางปัญญาประดิษฐ์มาเชื่อมกับระบบฐานข้อมูล HosXP
+            เพื่อวิเคราะห์ความเสี่ยงการเกิดโรคไตเรื้อรัง</p>
         </div>
 
         <form action="forms/appointment.php" method="post" role="form" class="php-email-form" data-aos="fade-up"
@@ -351,7 +361,7 @@
             <div class="col-md-9 form-group mt-6 mt-md-0">
               <div class="d-flex align-items-center">
                 <div class="col-3">
-                  <input type="text" class="form-control" id="weight" placeholder="น้ำหนัก" readonly>
+                  <input type="text" class="form-control" id="weight" placeholder="น้ำหนัก (กิโลกรัม)" readonly>
                 </div>
                 <output style="margin-left: 10px;" for="weight" id="weightOutput" class="text_number_input">{{ weight
                   }}</output>
@@ -363,7 +373,7 @@
             <div class="col-md-9 form-group mt-6 mt-md-0">
               <div class="d-flex align-items-center">
                 <div class="col-3">
-                  <input type="text" class="form-control" id="height" placeholder="ส่วนสูง" readonly>
+                  <input type="text" class="form-control" id="height" placeholder="ส่วนสูง (เซนติเมตร)" readonly>
                 </div>
                 <output style="margin-left: 10px;" for="height" id="heightOutput" class="text_number_input">{{ height
                   }}</output>
@@ -375,7 +385,7 @@
             <div class="col-md-9 form-group mt-6 mt-md-0">
               <div class="d-flex align-items-center">
                 <div class="col-3">
-                  <input type="text" class="form-control" id="Waist" placeholder="รอบเอว" readonly>
+                  <input type="text" class="form-control" id="Waist" placeholder="รอบเอว (เซนติเมตร)" readonly>
                 </div>
                 <output style="margin-left: 10px;" for="Waist" id="WaistOutput" class="text_number_input">{{ Waist
                   }}</output>
@@ -409,8 +419,8 @@
                 <label for="pulse">*</label>
                 <p style="display: inline;">{{ pulseResult }}</p>
               </div>
-              <input type="number" [(ngModel)]="pulse" class="form-control" name="pulse" id="pulse"
-                placeholder="ชีพจร" required [ngModelOptions]="{standalone: true}">
+              <input type="number" [(ngModel)]="pulse" class="form-control" name="pulse" id="pulse" placeholder="ชีพจร"
+                required [ngModelOptions]="{standalone: true}">
             </div>
 
           </div>
@@ -421,8 +431,8 @@
                 <label for="egfr">*</label>
                 <p style="display: inline;">{{ egfrResult }}</p>
               </div>
-              <input type="number" [(ngModel)]="egfr" name="egfr" class="form-control" id="egfr" placeholder="อัตรการกรองของเสียของไต"
-                required [ngModelOptions]="{standalone: true}">
+              <input type="number" [(ngModel)]="egfr" name="egfr" class="form-control" id="egfr"
+                placeholder="อัตรการกรองของเสียของไต" required [ngModelOptions]="{standalone: true}">
             </div>
 
           </div>
@@ -443,7 +453,7 @@
 
           <div class="row">
             <div class="d-flex align-items-center mb-4">
-              <div class="col-5"><label class="form-check-label" for="drinking">คุณดิมสุราใช่หรือไม่</label></div>
+              <div class="col-5"><label class="form-check-label" for="drinking">คุณดื่มสุราใช่หรือไม่</label></div>
               <div class="col d-flex align-items-center">
                 <div class="text-center me-1">ไม่ใช่</div>
                 <div class="form-check form-switch d-inline-block">
@@ -482,11 +492,22 @@
           <div class="row">
             <div class="col-5 mx-auto" style="text-align: start; color: red;">
               <ng-container [ngSwitch]="responseValue_2">
-                <p *ngSwitchCase="'N181'">ข้อแนะนำ: ท่านมีความเสี่ยง น้อย ต่อการเกิดโรคไตในระยะเวลา 10 ปี (น้อยกว่า 5%) ข้อแนะนำเบื้องต้น เพื่อป้องกันการเกิดโรคไตในอนาคต ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม</p>
-                <p *ngSwitchCase="'N182'">ข้อแนะนำ: ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม รักษาระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ ควบคุมระดับความดันโลหิตให้ดี</p>
-                <p *ngSwitchCase="'N183'">ข้อแนะนำ: ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม ควรหลีกเลี่ยงยากินแก้ปวดข้อ ปวดกล้ามเนื้อ (NSAIDs) รักษาระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ ควบคุมระดับความดันโลหิตให้ดี ลดน้ำหนักให้อยู่ในเกณฑ์ปกติ และท่านควรตรวจการทำงานของไตเพื่อให้มั่นใจว่าไตของท่านยังไม่มีปัญหาในปัจจุบัน</p>
-                <p *ngSwitchCase="'N184'">ข้อแนะนำ: ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม ควรหลีกเลี่ยงยากินแก้ปวดข้อ ปวดกล้ามเนื้อ (NSAIDs) รักษาระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ ควบคุมระดับความดันโลหิตให้ดี ลดน้ำหนักให้อยู่ในเกณฑ์ปกติ และท่านควรตรวจการทำงานของไตเพื่อให้มั่นใจว่าไตของท่านยังไม่มีปัญหาในปัจจุบัน ปฏิบัติตามแพทย์อย่างเคร่งครัด</p>
-                <p *ngSwitchCase="'N185'">ข้อแนะนำ: ท่านมีค่าการทำงานของไต 15 มล./นาที ท่านจึงต้องติดต่อแพทย์เพื่อฟอกไต</p>
+                <p *ngSwitchCase="'N181'">ข้อแนะนำ: ท่านมีความเสี่ยง น้อย ต่อการเกิดโรคไตในระยะเวลา 10 ปี (น้อยกว่า 5%)
+                  ข้อแนะนำเบื้องต้น เพื่อป้องกันการเกิดโรคไตในอนาคต ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ
+                  ลดกินเค็ม</p>
+                <p *ngSwitchCase="'N182'">ข้อแนะนำ: ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม
+                  รักษาระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ ควบคุมระดับความดันโลหิตให้ดี</p>
+                <p *ngSwitchCase="'N183'">ข้อแนะนำ: ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม
+                  ควรหลีกเลี่ยงยากินแก้ปวดข้อ ปวดกล้ามเนื้อ (NSAIDs) รักษาระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ
+                  ควบคุมระดับความดันโลหิตให้ดี ลดน้ำหนักให้อยู่ในเกณฑ์ปกติ
+                  และท่านควรตรวจการทำงานของไตเพื่อให้มั่นใจว่าไตของท่านยังไม่มีปัญหาในปัจจุบัน</p>
+                <p *ngSwitchCase="'N184'">ข้อแนะนำ: ควรออกกำลังกายอย่างสม่ำเสมอ ดื่มน้ำให้เพียงพอ ลดกินเค็ม
+                  ควรหลีกเลี่ยงยากินแก้ปวดข้อ ปวดกล้ามเนื้อ (NSAIDs) รักษาระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ
+                  ควบคุมระดับความดันโลหิตให้ดี ลดน้ำหนักให้อยู่ในเกณฑ์ปกติ
+                  และท่านควรตรวจการทำงานของไตเพื่อให้มั่นใจว่าไตของท่านยังไม่มีปัญหาในปัจจุบัน
+                  ปฏิบัติตามแพทย์อย่างเคร่งครัด</p>
+                <p *ngSwitchCase="'N185'">ข้อแนะนำ: ท่านมีค่าการทำงานของไต 15 มล./นาที ท่านจึงต้องติดต่อแพทย์เพื่อฟอกไต
+                </p>
                 <ng-container *ngSwitchDefault>
                   <p>ข้อแนะนำ: ......</p>
                 </ng-container>
@@ -595,7 +616,7 @@
     <section id="contact" class="contact">
       <div class="container">
 
-        <div class="section-title">
+        <div class="section-title" style="margin-top: 50px;">
           <h2>ติดต่อเรา</h2>
           <p>สามารถติดต่อโรงพยาบาลได้ที่อยู่ 145 ม.7 ถ.บริบาลดำริ ต.ศรีสุทโธ อ.บ้านดุง จ.อุดรธานี 41190</p> <br>
           <p>Contact Info
@@ -607,7 +628,9 @@
 
       <div>
 
-          <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2260.1659679368872!2d103.25854757767172!3d17.691274408544736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3124a3fda68f35d7%3A0x643708eec123c9f!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Liq4Lih4LmA4LiU4LmH4LiI4Lie4Lij4Liw4Lii4Li44Lie4Lij4Liy4LiK4Lia4LmJ4Liy4LiZ4LiU4Li44LiH!5e0!3m2!1sth!2sth!4v1699793782311!5m2!1sth!2sth" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe style="border:0; width: 100%; height: 350px;"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2260.1659679368872!2d103.25854757767172!3d17.691274408544736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3124a3fda68f35d7%3A0x643708eec123c9f!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Liq4Lih4LmA4LiU4LmH4LiI4Lie4Lij4Liw4Lii4Li44Lie4Lij4Liy4LiK4Lia4LmJ4Liy4LiZ4LiU4Li44LiH!5e0!3m2!1sth!2sth!4v1699793782311!5m2!1sth!2sth"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
 

@@ -14,16 +14,13 @@ export class ReportPageProComponent implements OnInit {
   age!: any;
   weight!: any;
   height!: any;
+  Waist!: any;
   bpd!: any;
   bps!: any;
-  fever!: any;
-  cough!: any;
-  sore_throat!: any;
-  phlegm!: any;
-  headache!: any;
-  covid!: any;
-  vomit!: any;
-  feverish!: any;
+  pulse!: any;
+  egfr!: any;
+  smoking!: any;
+  drinking!: any;
   responseValue!: any;
   responseValue_2!: any;
 
@@ -50,30 +47,24 @@ export class ReportPageProComponent implements OnInit {
         if (key === 'bps') {
           this.bps = value
         }
-        if (key === 'fever') {
-          this.fever = value
+        if (key === 'Waist') {
+          this.Waist = value
         }
-        if (key === 'cough') {
-          this.cough = value
+        if (key === 'pulse') {
+          this.pulse = value
         }
-        if (key === 'sore_throat') {
-          this.sore_throat = value
+        if (key === 'egfr') {
+          this.egfr = value
         }
-        if (key === 'phlegm') {
-          this.phlegm = value
+        if (key === 'smoking') {
+          this.smoking = value
         }
-        if (key === 'headache') {
-          this.headache = value
+        if (key === 'drinking') {
+          this.drinking = value
         }
-        if (key === 'covid') {
-          this.covid = value
-        }
-        if (key === 'vomit') {
-          this.vomit = value
-        }
-        if (key === 'feverish') {
-          this.feverish = value
-        }
+
+
+
         if (key === 'responseValue') {
           this.responseValue = value
         }
