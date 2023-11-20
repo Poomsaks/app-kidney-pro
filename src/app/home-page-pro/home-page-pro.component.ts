@@ -242,5 +242,12 @@ export class HomePageProComponent {
     const applicationDataString = JSON.stringify(applicationData);
     this.router.navigate(['/app-report-page-pro'], { queryParams: { data: applicationDataString } });
   }
+  goToadmin() {
+    this.router
+    .navigateByUrl("/", { skipLocationChange: true })
+    .then(() => {
+        this.router.navigate(["/app-admin-page-uat"]);
+    });
+  }
 
 }

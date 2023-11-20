@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MainServiceProService } from '../main-service/main-service-pro.service';
 import { HttpClient } from '@angular/common/http';
 import Chart from 'chart.js/auto';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-page-uat',
@@ -39,7 +39,8 @@ export class AdminPageUatComponent implements OnInit {
 
 
   constructor(private _serviceService: MainServiceProService,
-    private http: HttpClient) {
+    private http: HttpClient,
+    private router: Router) {
     // Define your chart data (chartBar_Data) here
     this.chartBarData = {
       labels: ['Label 1', 'Label 2', 'Label 3'],
@@ -119,5 +120,18 @@ export class AdminPageUatComponent implements OnInit {
     this.totalPages = Math.ceil(totalItems / this.itemsPerPage);
     return Array.from({ length: this.totalPages }, (_, i) => i + 1);
   }
-
+  goTologout() {
+    this.router
+    .navigateByUrl("/", { skipLocationChange: true })
+    .then(() => {
+        this.router.navigate(["/app-logout-page-uat"]);
+    });
+  }
+  goTohome() {
+    this.router
+    .navigateByUrl("/", { skipLocationChange: true })
+    .then(() => {
+        this.router.navigate(["/app-home-page-pro"]);
+    });
+  }
 }
