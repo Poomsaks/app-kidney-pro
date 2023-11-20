@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { MainServiceProService } from '../main-service/main-service-pro.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './home-page-pro.component.html',
   styleUrls: ['./home-page-pro.component.css']
 })
-export class HomePageProComponent {
+export class HomePageProComponent implements OnInit{
 
   constructor(
     private _serviceService: MainServiceProService,
@@ -19,10 +19,11 @@ export class HomePageProComponent {
   ) { }
   activeSlideIndex: number = 0;
   ngOnInit() {
-    this.hide_selectHeader();
     this._serviceService.authenticate().subscribe((response: any) => {
       console.log(response.result.response);
     });
+    this.hide_selectHeader();
+
   }
 
   changeSlide(direction: 'prev' | 'next') {
@@ -191,6 +192,7 @@ export class HomePageProComponent {
             age: String(this.age),
             weight: String(this.weight),
             height: String(this.height),
+            Waist: String(this.Waist),
             bmi: String(this.bmiz),
             bpd: String(this.bpd),
             bps: String(this.bps),
@@ -200,10 +202,12 @@ export class HomePageProComponent {
             drinking: String(this.drinking),
             pdx: this.responseValue,
           }
-          //บันทึกข้อมูลลง database
+
           this._serviceService.insert_data(installData).subscribe((response: any) => {
             console.log(response.result);
           });
+          //บันทึกข้อมูลลง database
+
         });
       }
 
@@ -244,10 +248,10 @@ export class HomePageProComponent {
   }
   goToadmin() {
     this.router
-    .navigateByUrl("/", { skipLocationChange: true })
-    .then(() => {
+      .navigateByUrl("/", { skipLocationChange: true })
+      .then(() => {
         this.router.navigate(["/app-admin-page-uat"]);
-    });
+      });
   }
 
 }
